@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasa AI Hanif — sistem &amp; otomatisasi AI untuk UMKM Indonesia</title>
+<meta name="description" content="Membangun resepsionis AI, mesin konten, AI internal, dan otomatisasi pekerjaan berulang untuk UMKM di Indonesia. Dikerjakan jarak jauh, harga disebut di depan.">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:title" content="Jasa AI Hanif — sistem &amp; otomatisasi AI untuk UMKM">
+<meta property="og:description" content="Pekerjaan berulang yang menghabiskan jam kerja Anda, saya ubah jadi sistem yang jalan sendiri.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#ffffff; --bg-alt:#f6f7fb; --bg-card:#ffffff;
+  --tx:#14161c; --tx-soft:#4a5163; --tx-faint:#6b7285;
+  --line:#e3e6ef; --line-soft:#eef0f6;
+  --ac:#4f46e5; --ac-tx:#ffffff; --ac-soft:#eef0ff; --ac-deep:#3730a3;
+  --ok:#0f7a55;
+  --shadow:0 1px 2px rgba(20,22,28,.05),0 8px 24px rgba(20,22,28,.06);
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0e1016; --bg-alt:#141822; --bg-card:#171b26;
+    --tx:#f2f4f9; --tx-soft:#b6bdcd; --tx-faint:#8c93a6;
+    --line:#252b3a; --line-soft:#1e2431;
+    --ac:#8b87ff; --ac-tx:#0e1016; --ac-soft:#1d1f3d; --ac-deep:#c3c0ff;
+    --ok:#4ade9f;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--tx);
+  font:400 17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  overflow-x:hidden;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.25;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(30px,7vw,50px);font-weight:800}
+h2{font-size:clamp(24px,4.6vw,33px);font-weight:750}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+a{color:var(--ac);text-underline-offset:3px}
+section{padding:60px 0;border-top:1px solid var(--line-soft)}
+.eyebrow{
+  font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ac);margin-bottom:12px;
+}
+.lead{font-size:clamp(17px,2.3vw,19.5px);color:var(--tx-soft);max-width:62ch}
+
+header{padding:20px 0;position:sticky;top:0;background:var(--bg);z-index:20;border-bottom:1px solid var(--line-soft)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.02em;font-size:17px;color:var(--tx);text-decoration:none}
+.mark{width:34px;height:34px;flex:0 0 34px}
+.nav-cta{
+  display:inline-flex;align-items:center;background:var(--ac);color:var(--ac-tx);
+  text-decoration:none;font-weight:650;font-size:14.5px;padding:9px 16px;border-radius:999px;
+}
+@media(max-width:520px){.nav-cta{display:none}}
+
+.hero{padding:52px 0 58px;border-top:0}
+.hero h1{margin-bottom:20px;max-width:16ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:650;
+  padding:14px 24px;border-radius:999px;font-size:16px;border:1px solid transparent;
+}
+.btn-primary{background:var(--ac);color:var(--ac-tx)}
+.btn-ghost{background:transparent;color:var(--tx);border-color:var(--line)}
+.note{font-size:14.5px;color:var(--tx-faint);margin-top:16px;max-width:56ch}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.badge{
+  font-size:13px;font-weight:600;color:var(--tx-soft);background:var(--bg-alt);
+  border:1px solid var(--line);padding:5px 12px;border-radius:999px;
+}
+
+.grid{display:grid;gap:16px;margin-top:32px}
+@media(min-width:700px){.grid.two{grid-template-columns:1fr 1fr}}
+.card{
+  background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);
+  padding:24px;box-shadow:var(--shadow);
+}
+.card h3{margin-bottom:8px}
+.card p{color:var(--tx-soft);font-size:15.5px}
+.card .who{font-size:12.5px;font-weight:700;color:var(--ac);margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em}
+.price{
+  margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+  font-size:15px;font-weight:700;color:var(--tx);
+}
+.price small{display:block;font-weight:500;color:var(--tx-faint);font-size:13.5px;margin-top:3px}
+
+.pain{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.pain:last-child{border-bottom:0}
+.pain svg{flex:0 0 26px;width:26px;height:26px;margin-top:2px}
+.pain b{display:block;margin-bottom:3px}
+.pain span{color:var(--tx-soft);font-size:15.5px}
+
+.proof{background:var(--bg-alt)}
+.proof-item{display:flex;gap:14px;padding:16px 0;align-items:flex-start;border-bottom:1px solid var(--line)}
+.proof-item:last-child{border-bottom:0}
+.tick{flex:0 0 22px;width:22px;height:22px;margin-top:4px}
+.proof-item b{display:block;font-size:16px;margin-bottom:2px}
+.proof-item span{color:var(--tx-soft);font-size:15px}
+
+ol.steps{list-style:none;margin:32px 0 0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 26px 52px}
+ol.steps li::before{
+  content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;
+  display:grid;place-items:center;border-radius:50%;
+  background:var(--ac-soft);color:var(--ac-deep);font-weight:750;font-size:15px;
+}
+ol.steps li::after{content:"";position:absolute;left:17px;top:38px;bottom:4px;width:2px;background:var(--line)}
+ol.steps li:last-child::after{display:none}
+ol.steps b{display:block;margin-bottom:3px}
+ol.steps span{color:var(--tx-soft);font-size:15.5px}
+
+details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:var(--bg-card)}
+summary{
+  cursor:pointer;padding:16px 20px;font-weight:650;font-size:16px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:400;font-size:22px;color:var(--tx-faint);line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 20px 18px;color:var(--tx-soft);font-size:15.5px}
+
+.final{background:var(--ac-soft);border-radius:var(--r);padding:36px 26px;text-align:center}
+.final h2{margin-bottom:12px}
+.final p{color:var(--tx-soft);max-width:48ch;margin:0 auto 24px}
+
+footer{padding:36px 0 110px;color:var(--tx-faint);font-size:14.5px;border-top:1px solid var(--line-soft)}
+footer a{color:var(--tx-soft)}
+
+.float{
+  position:fixed;right:16px;bottom:16px;z-index:40;
+  display:none;align-items:center;gap:9px;
+  background:#25d366;color:#04240f;text-decoration:none;font-weight:700;font-size:15px;
+  padding:13px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+@media(max-width:760px){.float{display:inline-flex}}
+@media(prefers-reduced-motion:no-preference){
+  .btn,.nav-cta,.float{transition:transform .15s ease,opacity .15s ease}
+  .btn:hover,.nav-cta:hover,.float:hover{transform:translateY(-1px);opacity:.93}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="11" fill="var(--ac)"/>
+        <path d="M13 27V13h3.2v5.4h7.6V13H27v14h-3.2v-5.6h-7.6V27z" fill="var(--ac-tx)"/>
+      </svg>
+      Jasa AI Hanif
+    </a>
+    <a class="nav-cta" href="https://wa.me/6282220954133?text=Halo%2C%20saya%20mau%20tanya%20soal%20jasa%20otomatisasi%20AI-nya." rel="noopener">Konsultasi gratis</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap">
+  <div class="badges">
+    <span class="badge">Dikerjakan jarak jauh</span>
+    <span class="badge">Harga disebut di depan</span>
+    <span class="badge">Tanpa langganan tersembunyi</span>
+  </div>
+  <h1>Pekerjaan berulang itu bisa jalan sendiri.</h1>
+  <p class="lead">
+    Balas chat yang pertanyaannya itu-itu saja. Rekap data tiap Senin pagi.
+    Cari-cari SOP yang entah di folder mana. Saya bangun sistem AI yang
+    mengerjakannya, supaya jam kerja Anda kembali ke hal yang memang butuh Anda.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="https://wa.me/6282220954133?text=Halo%2C%20saya%20mau%20tanya%20soal%20jasa%20otomatisasi%20AI-nya." rel="noopener">Chat WhatsApp</a>
+    <a class="btn btn-ghost" href="#layanan">Lihat layanan &amp; harga</a>
+  </div>
+  <p class="note">Konsultasi pertama gratis. Kalau menurut saya masalah Anda tidak layak diotomatiskan, saya bilang apa adanya.</p>
+</section>
+
+<section class="wrap">
+  <p class="eyebrow">Yang biasanya jadi keluhan</p>
+  <h2>Kalau tiga hal ini terasa familiar, kita bisa ngobrol</h2>
+  <div style="margin-top:24px">
+    <div class="pain">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.6-4.9A8.4 8.4 0 1 1 21 11.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><b>Chat masuk terus, pertanyaannya sama semua</b><span>Jam buka, harga, alamat, ready atau tidak. Dijawab manual satu per satu, dan yang telat dibalas pindah ke sebelah.</span></div>
+    </div>
+    <div class="pain">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2" stroke-linecap="round"/></svg>
+      <div><b>Tiap minggu habis berjam-jam buat rekap</b><span>Buka satu-satu, salin ke spreadsheet, rapikan, kirim. Pekerjaan yang persis sama, diulang terus, dan tetap saja bisa salah ketik.</span></div>
+    </div>
+    <div class="pain">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10l2 2.5h6.5A1.5 1.5 0 0 1 20 8v10a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18z" stroke-linejoin="round"/></svg>
+      <div><b>Informasinya ada, tapi tidak ada yang bisa menemukan</b><span>SOP, daftar harga, aturan garansi — semuanya tersimpan, tapi staf tetap bertanya ke Anda karena mencarinya lebih lama daripada bertanya.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="layanan">
+  <p class="eyebrow">Layanan</p>
+  <h2>Lima hal yang bisa saya bangunkan</h2>
+  <p class="lead" style="margin-top:14px">Angka di bawah adalah harga pembuatan. Perkakas yang saya pakai punya tingkat gratis, jadi tidak ada tagihan bulanan yang muncul diam-diam dari pihak ketiga.</p>
+
+  <div class="grid two">
+    <div class="card">
+      <p class="who">Untuk yang chatnya menumpuk</p>
+      <h3>Resepsionis AI</h3>
+      <p>Bot yang menjawab pertanyaan pelanggan dari data bisnis Anda sendiri, mencatat calon pembeli beserta nomornya, dan memasukkan janji temu ke kalender. Kalau pertanyaannya di luar wewenang dia, dia bilang akan menyambungkan ke Anda — bukan mengarang.</p>
+      <p class="price">Rp 1.500.000<small>opsional perawatan Rp 200.000/bulan</small></p>
+    </div>
+
+    <div class="card">
+      <p class="who">Untuk yang capek bikin konten</p>
+      <h3>Mesin konten</h3>
+      <p>Riset sudut yang sedang ramai di bidang Anda, empat pilar konten, kalender 30 hari, dan caption yang tinggal salin-tempel. Tiap pagi sistem mengirimi Anda materi hari itu, jadi tidak ada lagi bengong di depan layar.</p>
+      <p class="price">Rp 1.200.000<small>opsional isi ulang kalender Rp 500.000/bulan</small></p>
+    </div>
+
+    <div class="card">
+      <p class="who">Untuk yang timnya sering bertanya</p>
+      <h3>AI internal</h3>
+      <p>SOP, daftar harga, dan aturan internal dijadikan satu basis pengetahuan, lalu disambungkan ke bot tanya-jawab. Setiap jawaban menyebut dokumen asalnya, dan kalau memang belum ada datanya, dia bilang belum ada.</p>
+      <p class="price">Rp 2.500.000<small>opsional pembaruan dokumen Rp 400.000/bulan</small></p>
+    </div>
+
+    <div class="card">
+      <p class="who">Untuk pekerjaan yang itu-itu saja</p>
+      <h3>Otomasi pekerjaan</h3>
+      <p>Satu pekerjaan manual yang berulang saya petakan, lalu ubah jadi sistem yang jalan sendiri — dengan pemberitahuan otomatis kalau gagal, supaya tidak diam-diam berhenti tanpa Anda sadari.</p>
+      <p class="price">Mulai Rp 900.000<small>tergantung jumlah langkah dan sumber datanya</small></p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <p class="who">Untuk yang belum punya alamat sendiri</p>
+      <h3>Situs bisnis satu halaman</h3>
+      <p>Halaman yang enak dibuka di HP, memuat layanan dan harga Anda, dengan tombol WhatsApp yang langsung membuka chat berisi pesan pembuka. Terbit di alamat publik, dan <b>biaya hostingnya nol rupiah selamanya</b> — bukan gratis percobaan.</p>
+      <p class="price">Rp 750.000<small>halaman yang sedang Anda baca ini dibuat dengan cara yang sama</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <p class="eyebrow">Bukti</p>
+    <h2>Saya belum punya testimoni — jadi ini yang bisa Anda periksa sendiri</h2>
+    <p class="lead" style="margin-top:14px">
+      Mengarang testimoni itu gampang, dan justru itu alasan testimoni jadi kurang berarti.
+      Yang di bawah ini sistem yang benar-benar berjalan sekarang, dan tautannya bisa Anda buka.
+    </p>
+    <div style="margin-top:22px">
+      <div class="proof-item">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <b>Laporan pasar yang terbit sendiri tiap 06.00 WIB</b>
+          <span>Berjalan di server, bukan di laptop — jadi tetap terbit walau komputer saya mati berhari-hari.
+          <a href="https://abdullahhanif033-lab.github.io/laporan-harian/" rel="noopener">Buka laporan hari ini &rarr;</a></span>
+        </div>
+      </div>
+      <div class="proof-item">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <b>Tiga sistem otomatis yang jalan tiap hari</b>
+          <span>Asisten chat yang mengingat percakapan sebelumnya, penyaji laporan untuk dibaca dari HP, dan penyusun briefing harian. Ketiganya jenis sistem yang sama dengan yang akan saya bangun untuk Anda.</span>
+        </div>
+      </div>
+      <div class="proof-item">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <b>Analis otomatis untuk laporan keuangan</b>
+          <span>Membaca laporan keuangan perusahaan dan menyusun dossier lengkap dengan grafik — termasuk argumen yang melawan kesimpulannya sendiri, supaya tidak jadi laporan yang cuma enak dibaca.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="eyebrow">Cara kerja</p>
+  <h2>Empat langkah, dan Anda lihat harganya sebelum bayar apa pun</h2>
+  <ol class="steps">
+    <li><b>Ngobrol 20&ndash;30 menit</b><span>Lewat WhatsApp atau telepon. Saya tanya pekerjaan mana yang paling menyita waktu dan berapa jam habisnya seminggu. Gratis, tanpa kewajiban lanjut.</span></li>
+    <li><b>Saya kirim penawaran tertulis</b><span>Isinya: apa yang akan saya kerjakan, apa yang <em>tidak</em> termasuk, berapa jam kerja yang dihemat per bulan, harganya, dan apa saja yang bisa rusak di kemudian hari. Semua di depan.</span></li>
+    <li><b>Saya bangun dan uji sendiri</b><span>Termasuk menguji bagian yang gagal — sistem yang berhenti diam-diam lebih merepotkan daripada tidak ada sistem sama sekali.</span></li>
+    <li><b>Serah terima plus panduan</b><span>Anda dapat panduan cara mengubah isinya sendiri, misalnya mengganti harga tanpa perlu menghubungi saya. Ada masa perbaikan gratis setelah serah terima.</span></li>
+  </ol>
+</section>
+
+<section class="wrap">
+  <p class="eyebrow">Pertanyaan yang sering muncul</p>
+  <h2>Jawaban jujur, termasuk yang tidak enak</h2>
+  <div style="margin-top:26px">
+    <details>
+      <summary>Bot-nya bakal ngarang nggak?</summary>
+      <p>Ini risiko paling nyata, dan cara saya menanganinya adalah membatasi bot supaya hanya boleh menjawab dari dokumen Anda, wajib menyebut sumbernya, dan menjawab &ldquo;belum ada datanya&rdquo; kalau memang tidak ada. Sebelum serah terima saya sengaja mengujinya dengan pertanyaan yang jawabannya tidak ada di dokumen — kalau dia mengarang, saya perbaiki dulu. Hasil pengujian itu saya tunjukkan ke Anda.</p>
+    </details>
+    <details>
+      <summary>Saya gaptek. Nanti ribet nggak ngurusnya?</summary>
+      <p>Bagian teknisnya saya yang kerjakan sampai selesai. Yang perlu Anda lakukan cuma dua: menjawab pertanyaan soal bisnis Anda, dan sekali menekan tombol izin di akun Anda sendiri (misalnya menyambungkan WhatsApp atau kalender) — karena itu memang tidak boleh saya lakukan atas nama Anda. Setelah jadi, mengubah harga atau jam buka cukup mengedit satu berkas teks, dan panduannya saya buatkan.</p>
+    </details>
+    <details>
+      <summary>Ada biaya bulanan ke pihak lain?</summary>
+      <p>Untuk kebanyakan kasus, tidak ada. Saya sengaja memilih perkakas yang punya tingkat gratis dan cukup untuk skala UMKM. Kalau nanti pemakaian Anda tumbuh sampai melewati batas gratisnya, saya beri tahu <em>sebelum</em> itu terjadi berikut angka pastinya — bukan setelah tagihannya muncul.</p>
+    </details>
+    <details>
+      <summary>Kalau sistemnya rusak, gimana?</summary>
+      <p>Ada masa perbaikan gratis setelah serah terima. Di luar itu, sistemnya sudah dirancang mengirim pemberitahuan otomatis ke Anda kalau gagal, jadi Anda tahu duluan sebelum pelanggan yang komplain. Di penawaran saya juga sebutkan bagian mana yang paling mungkin rusak dan kapan — misalnya kalau sistemnya bergantung pada situs pihak ketiga yang bisa berubah sewaktu-waktu.</p>
+    </details>
+    <details>
+      <summary>Berapa lama jadinya?</summary>
+      <p>Situs satu halaman biasanya beberapa hari. Resepsionis AI dan otomatisasi sekitar satu sampai dua minggu, tergantung seberapa cepat data dari Anda masuk — itu yang paling sering jadi penentu, bukan waktu pengerjaannya. Tanggal pastinya saya tulis di penawaran.</p>
+    </details>
+    <details>
+      <summary>Kenapa harganya lebih murah dari agensi?</summary>
+      <p>Karena saya sendirian, kerja jarak jauh, tidak menyewa kantor, dan memakai perkakas gratis alih-alih langganan mahal yang biayanya diteruskan ke klien. Konsekuensinya jujur saja: saya bukan tim, jadi ada batas berapa proyek yang bisa saya pegang sekaligus. Kalau saya sedang penuh, saya bilang — bukan menerima lalu terlambat.</p>
+    </details>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="final">
+    <h2>Ceritakan dulu pekerjaan yang paling bikin capek</h2>
+    <p>Tidak perlu tahu solusinya apa — itu bagian saya. Konsultasi pertama gratis, dan kalau ternyata tidak layak diotomatiskan, saya akan bilang begitu.</p>
+    <a class="btn btn-primary" href="https://wa.me/6282220954133?text=Halo%2C%20saya%20mau%20tanya%20soal%20jasa%20otomatisasi%20AI-nya." rel="noopener">Chat WhatsApp sekarang</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--tx)">Jasa AI Hanif</strong> — sistem &amp; otomatisasi AI untuk UMKM Indonesia. Dikerjakan jarak jauh, ke mana saja.</p>
+    <p style="margin-top:8px">WhatsApp: <a href="https://wa.me/6282220954133" rel="noopener">+62 822-2095-4133</a></p>
+    <p style="margin-top:14px;font-size:13.5px">Halaman ini dibuat dan diterbitkan dengan cara yang sama seperti yang saya tawarkan — satu berkas, tanpa biaya hosting.</p>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/6282220954133?text=Halo%2C%20saya%20mau%20tanya%20soal%20jasa%20otomatisasi%20AI-nya." rel="noopener" aria-label="Chat WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.4.7.7-2.3-.2-.4A8 8 0 0 1 12 4zm4.5 10.3c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 3.9c1.6.6 2 .5 2.4.5a2.5 2.5 0 0 0 1.7-1.2 2 2 0 0 0 .1-1.2z"/></svg>
+  Chat WhatsApp
+</a>
+
+</body>
+</html>
